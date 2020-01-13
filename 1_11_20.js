@@ -1,0 +1,133 @@
+// (15) 3Sum
+// Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+
+// Note:
+
+// The solution set must not contain duplicate triplets.
+
+// Example:
+// Given array nums = [-1, 0, 1, 2, -1, -4],
+
+// A solution set is:
+// [
+//   [-1, 0, 1],
+//   [-1, -1, 2]
+// ]
+
+var currentArr= [-1, 0, 1, 2, -1, -4];
+function threeSum(arr){
+    var newArr=[];
+    for(var i= 0; i < arr.length; i++){
+        for(var j= i+1; j < arr.length; j++){
+            for(var h= j+1; h < arr.length; h++){
+                if(arr[i]+arr[j]+arr[h]===0){
+                    newArr.push([arr[i], arr[j], arr[h]])
+                }
+            }
+        }
+    }
+    return newArr;
+}
+console.log(threeSum(currentArr));
+
+//------------------------------------------------
+var threeSum_Brute = function(nums){
+    nums = nums.sort(function(a,b){
+        return a-b;
+});
+
+let uniqueTriplets = [];
+let i, j, k;
+let len = nums.length;
+
+for (i =0; i< len; i++){
+    if(i > 0 && nums[i] === nums[i-1]) continue;
+    for (j = i+1; j < len; j++){
+        if( j > i+1 && nums[j] === nums[j-1]) continue;
+        for( k = j + 1; k < len; k++){
+            if(k > j+1 && nums[k === nums[k-1]) continue;
+        if((nums[i] + nums[j] + nums[k])===0){
+            uniqueTriplets.push([nums[i], nums[j], nums [k]]);
+            }
+        }
+    } 
+    return uniqueTriplets;  
+}
+
+console.log(threeSum_Brute([-1,0,1,2,-1,-4]));
+
+
+
+// (202) Happy Number
+
+// Write an algorithm to determine if a number is "happy".
+
+// A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers.
+
+// Example: 
+
+// Input: 19
+// Output: true
+// Explanation: 
+// 12 + 92 = 82
+// 82 + 22 = 68
+// 62 + 82 = 100
+// 12 + 02 + 02 = 1
+
+var currentNumber= 19;
+function happyNumber(num){
+  num = num.toString().split("").map(num => num*num);
+  let sum = num.reduce((a,b) => {
+    return a + b
+  },0);
+  console.log(num, sum);
+  if ( sum ===1 ){
+    return true
+  } else {
+    return happyNumber(sum);
+  }
+}
+
+console.log(happyNumber(currentNumber));
+
+// (13) Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+// Symbol       Value
+// I             1
+// V             5
+// X             10
+// L             50
+// C             100
+// D             500
+// M             1000
+// For example, two is written as II in Roman numeral, just two one's added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.
+
+// Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+
+// I can be placed before V (5) and X (10) to make 4 and 9. 
+// X can be placed before L (50) and C (100) to make 40 and 90. 
+// C can be placed before D (500) and M (1000) to make 400 and 900.
+// Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
+
+// Example 1:
+
+// Input: "III"
+// Output: 3
+// Example 2:
+
+// Input: "IV"
+// Output: 4
+// Example 3:
+
+// Input: "IX"
+// Output: 9
+// Example 4:
+
+// Input: "LVIII"
+// Output: 58
+// Explanation: L = 50, V= 5, III = 3.
+// Example 5:
+
+// Input: "MCMXCIV"
+// Output: 1994
+// Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
