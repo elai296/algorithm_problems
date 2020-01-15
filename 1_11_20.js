@@ -131,3 +131,27 @@ console.log(happyNumber(currentNumber));
 // Input: "MCMXCIV"
 // Output: 1994
 // Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+var romanToInt =function(s){
+    var hash = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    };
+    var lastChar = hash[s.charAt(0)];
+    var r = 0;
+    for (var i = 0, l = s.length; i <= l-1; ++i){
+        var currentChar = hash [s.charAt(i)];
+        if (lastChar < currentChar){
+            r += currentChar - lastChar -lastChar;
+        }else{
+            r += currentChar;
+        }
+        lastChar = currentChar;
+    }
+    return r;
+};
