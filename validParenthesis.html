@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Valid Parenthesis</title>
+  </head>
+  <body>
+    <script>
+      var map = {
+        "(": ")",
+        "[": "]",
+        "{": "}"
+      };
+
+      function isValid(s) {
+        debugger; 
+        var stack = [];
+
+        for (var i = 0; i < s.length; i++) {
+          var el = s[i];
+          var item = map[el];
+          if (item) {
+            stack.push(item);
+          } else {
+              var popItem = stack.pop();
+            if (el !== popItem) {
+              return false;
+            }
+          }
+        }
+
+        return stack.length === 0;
+      }
+      var input1 = "()";
+      var input2 = "()[]{}";
+      var input3 = "(]";
+      var input4 = "([)]";
+      var input5 = "{[]}";
+      console.log(isValid(input2));
+    </script>
+  </body>
+</html>
+
+var input1 = "()"; var input2 = "()[]{}"; var input3 = "(]"; var input4 =
+"([)]"; var input5 = "{[]}";
