@@ -1,4 +1,14 @@
-// 21. Merge Two Sorted Lists
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 21. Merge Two Sorted Lists
 // Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 
 // Example:
@@ -7,6 +17,7 @@
 // Output: 1->1->2->3->4->4
 
 var mergeTwoLists = function (l1, l2){
+    debugger;
     var res = new ListNode(-1);
     var temp =res;
     while(l1 && l2){
@@ -27,3 +38,6 @@ var mergeTwoLists = function (l1, l2){
     }
     return temp.next;
 };
+    </script>
+</body>
+</html>
