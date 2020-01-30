@@ -1,4 +1,14 @@
-// https://leetcode.com/problems/length-of-last-word/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // https://leetcode.com/problems/length-of-last-word/
 // 58. Length of Last Word
 // Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return the length of last word (last word means the last appearing word if we loop from left to right) in the string.
 // If the last word does not exist, return 0.
@@ -9,10 +19,10 @@
 //  Input: "Hello World"
 //  Output: 5
 
-var arr1 ="Hello World";
+const arr1 ="Hello World";
 function findLengthOfLastWord(arr){
-    var num =arr.split(" ");
-    var newNum= num[num.length-1];
+    let num =arr.split(" ");
+    let newNum= num[num.length-1];
     return newNum.length;
 }
 
@@ -38,13 +48,19 @@ console.log(findLengthOfLastWord(arr1));
 
 // Coud you solve it without converting the integer to a string?
 
-var orginalNum = 121;
- function palindromeNum(num){
-     var reverseNum = num.toString();
-     for (var i = 0, j = reverseNum.length-1; i < reverseNum.length/2; i++,j--){
+const originalNum = 121;
+function palindromeNum(num){
+    debugger;
+     let reverseNum = num.toString();
+     for (let i = 0, j = reverseNum.length-1; i < reverseNum.length/2; i++,j--){
          if (reverseNum [i] !== reverseNum[j]){
              return false;
          }
      }
      return true;
  }
+
+ console.log(palindromeNum(originalNum));
+    </script>
+</body>
+</html>
