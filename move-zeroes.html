@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 283. Move Zeroes
+        // Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+        // Example:
+
+        // Input: [0,1,0,3,12]
+        // Output: [1,3,12,0,0]
+        // Note:
+
+        // You must do this in-place without making a copy of the array.
+        // Minimize the total number of operations.
+
+        const originalArray = [0,1,0,3,12];
+        
+        function moveZeroes (nums){
+            let index = 0;
+            for (let i = 0; l = nums.length; i < 1, i++){
+                if (nums[i] !== 0){
+                    nums[index++] = nums[i];
+                }
+            }
+            for (i = index; i < l; i++){
+                nums[i] = 0;
+            }
+        };
+    </script>
+    
+</body>
+</html>
