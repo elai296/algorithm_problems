@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Single Number</title>
+  </head>
+  <body>
+    <script>
+      // Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+
+      // Note:
+
+      // Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+      // Example 1:
+
+      // Input: [2,2,1]
+      // Output: 1
+      // Example 2:
+
+      // Input: [4,1,2,1,2]
+      // Output: 4
+
+      const numList = [4, 1, 2, 1, 2];
+      function singleNumber(arr) {
+        debugger;
+        arr.sort();
+        for (let i = 0; i < arr.length; i += 2) {
+            if (arr [i] !== arr [i + 1]){
+                return arr[i];
+            }
+        }
+      };
+      console.log(singleNumber(numList));
+    </script>
+  </body>
+</html>
