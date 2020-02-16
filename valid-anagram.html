@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valid anagram</title>
+</head>
+<body>
+    <script>
+//         242. Valid Anagram
+//         Given two strings s and t , write a function to determine if t is an anagram of s.
+
+// Example 1:
+
+// Input: s = "anagram", t = "nagaram"
+// Output: true
+// Example 2:
+
+// Input: s = "rat", t = "car"
+// Output: false
+// Note:
+// You may assume the string contains only lowercase alphabets.
+
+// Follow up:
+// What if the inputs contain unicode characters? How would you adapt your solution to such case?
+
+const s = "anagram";
+const t = "nagaram";
+  function isAnagram(string1, string2) {
+      debugger
+        if (string1.length !== string2.length)
+            return false;
+    
+        let letters1 = string1.split('');
+        let letters2 = string2.split('');
+        for (let letter of letters1) {
+            let position = letters2.indexOf(letter);
+            if(position == -1)
+                return false;
+            letters2.splice(position, 1);
+        }
+        return true;
+    };
+    console.log(isAnagram(s, t));
+    </script>
+</body>
+</html>
