@@ -36,6 +36,33 @@ function longestCommonPrefixes(arr){
      i++;
      return a1.substring(0,i);
 }
+//---------------
+
+const strs = ["flower","flow","flight"];
+
+const longestCommonPrefix = function(strs) {
+     debugger;
+  if (!strs.length) return '';
+
+  const len = strs.reduce(function(pre, item) {
+    return Math.min(pre, item.length);
+  }, Number.MAX_VALUE);
+
+  let ans = '';
+  for (let i = 0; i < len; i++) {
+    let a = strs[0][i];
+    let f = strs.every(function(item) {
+      return item[i] === a;
+    });
+
+    if (!f) break;
+    ans += a;
+  }
+
+  return ans;
+};
+
+console.log(longestCommonPrefix(strs))
 
           
      </script>
