@@ -24,12 +24,13 @@
 //   [-1, -1, 2]
 // ]
 
-var currentArr= [-1, 0, 1, 2, -1, -4];
+const currentArr= [-1, 0, 1, 2, -1, -4];
 function threeSum(arr){
-    var newArr=[];
-    for(var i= 0; i < arr.length; i++){
-        for(var j= i+1; j < arr.length; j++){
-            for(var h= j+1; h < arr.length; h++){
+    debugger;
+    let newArr=[];
+    for(let i= 0; i < arr.length; i++){
+        for(let j= i+1; j < arr.length; j++){
+            for(let h= j+1; h < arr.length; h++){
                 if(arr[i]+arr[j]+arr[h]===0){
                     newArr.push([arr[i], arr[j], arr[h]])
                 }
