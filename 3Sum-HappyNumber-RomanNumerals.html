@@ -56,9 +56,9 @@ for (i =0; i< len; i++){
     for (j = i+1; j < len; j++){
         if( j > i+1 && nums[j] === nums[j-1]) continue;
         for( k = j + 1; k < len; k++){
-            if(k > j+1 && nums[k === nums[k-1]) continue;
-        if((nums[i] + nums[j] + nums[k])===0){
-            uniqueTriplets.push([nums[i], nums[j], nums [k]]);
+            if(k > j+1 && nums[k] === nums[k-1]) continue;
+            if((nums[i] + nums[j] + nums[k])===0){
+                uniqueTriplets.push([[nums[i], nums[j], nums [k]]);
             }
         }
     } 
