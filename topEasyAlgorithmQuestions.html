@@ -1,4 +1,15 @@
-// 121. Best Time to Buy and Sell Stock
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 121. Best Time to Buy and Sell Stock
 // Say you have an array for which the ith element is the price of a given stock on day i.
 
 // If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
@@ -17,9 +28,13 @@
 // Output: 0
 // Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
-const maxProfit = function(prices) {
+const priceNum = [7,1,5,3,6,4];
+// const priceNum = [7,6,4,3,1];
+
+const maxProfit = function (prices) {
+    debugger;
     let maxProfit = 0;
-    let lowestPrice  = prices[0];
+    let min = prices[0]
     for(let i = 1; i < prices.length; i++) {
         min = Math.min(prices[i], min);
         maxProfit = Math.max(maxProfit, prices[i] - min);
@@ -27,16 +42,23 @@ const maxProfit = function(prices) {
     return maxProfit;
 };
 
-var maxProfit = function(prices) {
-    if (prices.length <= 1) return 0;
-    var profits = 0;
-    for (var i = 1, l = prices.length; i <= l - 1; ++i) {
-        if (prices[i] > prices[i - 1]) {
-            profits += prices[i] - prices[i - 1];
-        }
-    }
-    return profits;
-};
+console.log(maxProfit(priceNum));
+
+// const priceNum = [7,1,5,3,6,4];
+
+// const maxProfit = function(prices) {
+//     debugger;
+//     if (prices.length <= 1) return 0;
+//     let profits = 0;
+//     for (let i = 1, l = prices.length; i <= l - 1; ++i) {
+//         if (prices[i] > prices[i - 1]) {
+//             profits += prices[i] - prices[i - 1];
+//         }
+//     }
+//     return profits;
+// };
+
+// console.log(maxProfit(priceNum));
 
 
 
@@ -60,4 +82,7 @@ var maxProfit = function(prices) {
 // Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
 const newNum= num => parseFloat(num.toString().split("").reverse().join(""))*Math.sign(num);
-console.log(newNum);
+// console.log(newNum(120));
+    </script>
+</body>
+</html>
