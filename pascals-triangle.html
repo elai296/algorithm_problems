@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
+
+
+// In Pascal's triangle, each number is the sum of the two numbers directly above it.
+
+// Example:
+
+// Input: 5
+// Output:
+// [
+//      [1],
+//     [1,1],
+//    [1,2,1],
+//   [1,3,3,1],
+//  [1,4,6,4,1]
+// ]
+
+const num = 5;
+
+function generate (numRows){
+    debugger;
+    let result = [];
+    for (let i = 0, l = numRows; i < l; i++){
+        let arr = [];
+        arr[0] = arr[i] = 1;
+        for (var j = 1; j <i; j++){
+            arr[j] = result[i-1][j] + result[i-1][j-1];
+        }
+        result[i] = arr;
+    }
+    return result;
+};
+
+console.log(generate(num));
+    </script>
+</body>
+</html>
