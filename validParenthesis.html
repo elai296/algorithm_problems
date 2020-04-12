@@ -18,13 +18,13 @@
         debugger; 
         var stack = [];
 
-        for (var i = 0; i < s.length; i++) {
-          var el = s[i];
-          var item = map[el];
+        for (let i = 0; i < s.length; i++) {
+          let el = s[i];
+          let  item = map[el];
           if (item) {
             stack.push(item);
           } else {
-              var popItem = stack.pop();
+              let popItem = stack.pop();
             if (el !== popItem) {
               return false;
             }
