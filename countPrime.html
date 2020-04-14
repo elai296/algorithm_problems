@@ -22,10 +22,10 @@
         const numbr = 10;
 
         function countPrimes (num){
-            debugger;
+           
             let count = 0;
             const arr =  new Array (num);
-            for (let i = 2; i < num; ++i){
+            for (let i = 2; i < num; i++){
                 if (arr [i]){
                     continue;
                 }
@@ -37,7 +37,8 @@
             return count;
         }
         function countPrime2(num){
-            var count = 0;
+            debugger;
+            let count = 0;
             for (let i = 2; i < num; i++){
                 for (let j = i; j < num; j = j +i){
                     if ( i % j > 0) count++;
