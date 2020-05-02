@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = [1,2,3];
+        const arr2 = [4,1,9];
+        
+        //refactored
+        function sameArr (list1, list2){
+            if(arr1.length !== arr2.length){
+                return false;
+            }
+            let frequencyCounter1 = {};
+            let frequencyCounter2 = {};
+            for(let val of arr1){
+                frequencyCounter1[val] = (frequencyCounter1[val] || 0) +1
+            }
+            for(let val of arr2){
+                frequencyCounter2[val] = (frequencyCounter2[val] || 0) +1
+            }
+            for(let key in frequencyCouter){
+                if(!(key ** 2 in frequencyCounter2)){
+                    return false;
+                }
+                if(frequencyCounter2[key ** 2] !== frequencyCounter[key]){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        console.log(sameArr(arr1, arr2));
+
+        
+    </script>
+</body>
+</html>
