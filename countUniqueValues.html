@@ -10,6 +10,20 @@
         /*implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in teh array, but it will alwasy be sorted
 
         countUniqueValues([1,1,1,1,1,2]), answer is 2
+        using 
+        */
+
+        function countUniqueValues(arr){
+            const i = 0;
+            if (arr.lenght === 0) return 0;
+            for(let j = 1; j < arr.length; j++){
+                if(arr[i] !== arr[j]){
+                    i++;
+                    arr[i] = arr[j];
+                }
+            }
+            return i + 1;
+        }
         
     </script>
 </body>

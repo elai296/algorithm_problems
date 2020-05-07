@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function maxSubarraySum(arr, num){
+            let maxSum = 0;
+            let tempSum = 0;
+            if (arr.length < num) return null;
+            for (let i = 0; i < num; i++){
+                maxSum += arr[i];
+            }
+            tempSum = maxSum;
+            for (let i = num; i < arr.length; i++){
+                tempSum = tempSum - arr[i-num] + arr[i];
+                maxSum = Math.max(maxSum, tempSum);
+            }
+            return maxSum;
+        }
+
+        //time complexity - O(N)
+    </script>
+</body>
+</html>
